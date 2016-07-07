@@ -11,16 +11,19 @@ angular.module('simpleTodosFrontendApp')
   .service('tasksService', [
     'asteroidFactory',
     'tasksFactory',
+    '$rootScope',
     tasksService
   ]);
 
-function tasksService(asteroidFactory, tasksFactory) {
+function tasksService(asteroidFactory, tasksFactory, $rootScope) {
 
   let tasks = asteroidFactory.asteroid.getCollection("tasks");
   let tasksQuery = tasks.reactiveQuery({});
   
   tasksQuery.on('change', (idDocument) => {
-    tasksFactory.list = tasksQuery.result;
+    $rootScope.$apply(() => {
+      angular.extend(tasksFactory.list, tasksQuery.result);
+    });
   });
 
   this.subscribe = () => {

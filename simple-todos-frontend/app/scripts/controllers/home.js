@@ -1,3 +1,4 @@
+
 'use strict';
 
 /**
@@ -18,8 +19,7 @@ function HomeCtrl(tasksFactory, tasksService) {
   let vm = this;
 
   tasksService.subscribe();
-
-  //vm.todoList = todosFactory.todoList;
+  
   vm.todoList = tasksFactory.list;
 
 }
