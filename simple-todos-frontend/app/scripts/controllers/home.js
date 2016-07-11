@@ -19,7 +19,9 @@ function HomeCtrl(tasksFactory, tasksService) {
   let vm = this;
 
   tasksService.subscribe();
-  
+
   vm.todoList = tasksFactory.list;
+  vm.pokemonsList = tasksFactory.listPokemons;
+  vm.digimonsList = tasksFactory.listDigimons;
 
 }

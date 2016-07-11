@@ -1,5 +1,9 @@
-{{vm.todoList}}
 <ul ng-repeat="todo in vm.todoList">
-  <li>{{todo.name}}</li>
+  <li>Task: {{todo.name}}</li>
+  <ul ng-repeat="pokemon in vm.pokemonsList">
+    <li>Pokemon: {{pokemon.name}}</li>
+    <ul ng-repeat="digimon in vm.digimonsList">
+      <li>Digimon: {{digimon.name}} - vs - {{digimon.nameVS}}</li>
+    </ul>
+  </ul>
 </ul>
-

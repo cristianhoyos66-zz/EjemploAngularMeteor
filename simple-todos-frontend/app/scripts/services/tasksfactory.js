@@ -11,9 +11,11 @@ angular.module('simpleTodosFrontendApp')
   .factory('tasksFactory', function () {
 
     let sharedData = {
-      list: []
+      list: [],
+      listPokemons: [],
+      listDigimons: []
     };
 
     return sharedData;
-    
+
   });

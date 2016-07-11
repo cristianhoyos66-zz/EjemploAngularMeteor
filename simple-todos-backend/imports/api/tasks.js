@@ -10,6 +10,6 @@ Meteor.publish('tasks', tasksPublication);
 
 Meteor.methods({
   createTask: () => {
-    Tasks.insert({name: 'hola'});
+    Tasks.insert({name: 'vs2', pokemon: 'pendertuga'});
   }
 });
